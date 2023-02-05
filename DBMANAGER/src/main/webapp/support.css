@@ -1,0 +1,44 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+#indexbody{
+    background-image: url("https://resources.jetbrains.com/storage/products/datagrip/img/meta/preview.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 100vh;
+    position: relative;
+}
+#header{
+    border: 1px solid black;
+    padding: 1%;
+    text-align: center;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    left: 0%;
+    font-family: 'Abril Fatface', cursive; 
+    color: white;
+    border-radius: 10px;
+   /* background-color: rgb(68, 148, 246);     */
+   background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+#start{
+    width: 100%;
+}
+button{
+    position: absolute;
+    bottom: 15%;
+    left:46.5% ;
+    text-decoration: none;
+    border:1px solid black;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: black;
+    font-size: 30px;
+    font-weight: bolder;
+
+}

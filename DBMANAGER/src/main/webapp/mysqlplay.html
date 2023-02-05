@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MYSQLPLAY</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Noto+Serif:ital,wght@1,400;1,700&family=Oswald:wght@700&family=Rubik+Bubbles&family=Rubik+Marker+Hatch&family=Stylish&display=swap"
+        rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Combo&family=Island+Moments&family=Lora&family=PT+Sans:ital@1&family=Roboto:ital,wght@1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css?family=Parisienne|Quicksand&display=swap');
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            position:relative;
+        }
+        body{
+				background-image:url("https://img.freepik.com/free-vector/white-abstract-background-design_23-2148825582.jpg");
+				background-size:100% 100%;
+				background-repeat:no-repeat;
+			}
+
+        .container {
+                	background-image: linear-gradient(to right top, #6845b5, #6e4cb8, #7352bb, #7959be, #7e5fc1, #7f68c7, #8071cc, #8179d1, #8085d8, #8091de, #829de3, #86a8e7);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            margin-top: -10px;
+            padding:10px;
+        }
+
+        .header-bar {
+            position: relative;
+            width: 100%;
+            min-width: 300px;
+            height: 60px;
+            border: 10px solid transparent;
+            border-top: 10px solid #fffa;
+            border-left: 10px solid #fffa;
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25) inset;
+        }
+
+        .header-bar::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 30%;
+            height: 49px;
+            border: 10px solid transparent;
+            border-bottom: 10px solid #fffa;
+            border-right: 10px solid #fffa;
+            transition: 0.3s linear all;
+        }
+
+        .header-bar>.logo {
+            position: fixed;
+            top: 4.5%;
+            left: 3%;
+            transform: translateY(-50%);
+            color: #fffc;
+            font-family: 'Parisienne', cursive;
+            cursor: default;
+            user-select: none;
+        }
+
+        .slider-menu,.disp {
+            position: fixed;
+            top: 2.9%;
+            right: 3%;
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+            font-size: 1.3em;
+
+        }
+
+        .slider-menu>li {
+            display: inline-flex;
+            padding: 14px;
+            margin-left: 2px;
+            font-family: 'Quicksand', sans-serif;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s linear all;
+            user-select: none;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            border: 1px solid black;
+            padding: 5%;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+            ;
+        }
+
+        #masterworkheader {
+            border: 1px solid black;
+            padding: 1%;
+            text-align: center;
+            position: fixed;
+            top: 0%;
+            right: 0%;
+            left: 0%;
+            font-family: 'Abril Fatface', cursive;
+            color: white;
+            background-color: #7B70CE;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        }
+
+        #masterworkbody {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px;
+            color: rgb(68, 148, 246);
+            background-color: white;
+            margin: 30px;
+            border-radius: 10px;
+            cursor:pointer;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+
+        form>h1 {
+            font-size: 40px;
+            font-weight: bolder;
+            margin: 20px;
+            font-family: 'Abril Fatface', cursive;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-weight: bolder;
+            margin: 20px;
+            font-family: 'Noto Serif', serif;
+        }
+
+        #button {
+            position: fixed;
+            top: 7%;
+            right: 5%;
+            color: white;
+        }
+
+        #work {
+            width: 500px;
+            height: auto;
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            background-color: #7B70CE;
+            color: white;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        legend {
+            background-color: white;
+            color: black;
+            padding: 15px 5px;
+            text-align: center;
+            width: 350px;
+            height: 50px;
+            margin-top: -5.5em;
+            margin-left: -25px;
+            font-size: 25px;
+        }
+
+        .c-box1 {
+            margin-top: 30%;
+        }
+
+        .c-box2 {
+            margin-top: 13%;
+        }
+
+
+	#img{
+	height: 40px;
+	width: 40px;
+}
+        #back-btn {
+            width: 50px;
+            height: 50px;
+            position: fixed;
+            right: 3%;
+            bottom: 5%;
+            border-radius: 10px;
+            padding: 5px;
+            border: 2px solid black;
+        }
+        
+        
+        
+        
+        
+.disp{
+	display: none;
+	color: white;
+	border-radius: 5%;
+	box-shadow: 8px 10px 18px black;
+	background-image: linear-gradient(to right top, #6845b5, #6e4cb8, #7352bb, #7959be, #7e5fc1, #7f68c7, #8071cc, #8179d1, #8085d8, #8091de, #829de3, #86a8e7);
+	text-align:center;
+
+}
+.hidden:focus ~ form{
+	display: block;
+	margin: 100px 0px;
+	padding: 20px;
+}
+#logOut{
+	display: block;
+	text-align: center;
+	margin: 13px auto 0px auto;
+	padding: 10px;
+	font-size: 13px;
+	border-radius: 10%;
+}
+/*hidden details*/
+.disp h3{
+	text-align: center;
+	margin: 13px;
+
+}
+.disp p{
+	font-size: 20px;
+}
+#circle{
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	background-color: #7B70CE;
+	border-radius: 50%;
+	text-align: center; 
+	margin: auto;
+	box-shadow: 3px 3px 13px floralwhite;
+}
+ .contain {
+        	/*background-color: #7B70CE;*/
+        	background-image: linear-gradient(to right top, #6845b5, #6e4cb8, #7352bb, #7959be, #7e5fc1, #7f68c7, #8071cc, #8179d1, #8085d8, #8091de, #829de3, #86a8e7);
+            position: absolute;
+            top: 0%;
+            right:0%;
+            left: 0%;
+            color: #fff;
+            margin-top: -10px;
+            /*padding:20px;*/
+            padding:25px 20px 30px 20px;
+            border-bottom-right-radius:25px;
+            border-bottom-left-radius:25px;
+            border: 1px solid black;
+            
+        }
+        #level{
+	position:absolute;
+	top:15%;
+	left:0%;
+	padding:10px;
+	border-radius:0px 10px 10px 0px;
+	font-size:30px;
+	background-image: linear-gradient(to right top, #6845b5, #6e4cb8, #7352bb, #7959be, #7e5fc1, #7f68c7, #8071cc, #8179d1, #8085d8, #8091de, #829de3, #86a8e7);
+	color:white;
+	
+}
+#pagename{
+	position:absolute;
+	top:22%;
+	left:0%;
+	padding:10px;
+	border-radius:0px 10px 10px 0px;
+	font-size:22px;
+	background-image: linear-gradient(to right top, #6845b5, #6e4cb8, #7352bb, #7959be, #7e5fc1, #7f68c7, #8071cc, #8179d1, #8085d8, #8091de, #829de3, #86a8e7);
+	color:white;
+}
+
+    </style>
+</head>
+
+<body id="masterworkbody">
+   <div class="contain">
+            <div class="header-bar">
+                <h1 class="logo">DB</h1>
+                <ul class="slider-menu">
+                    <li id="abt">About</li>
+	                 <a href="#" class="hidden">
+                	<img id="img" src="https://download-accl.zoho.com/webdownload?x-service=CLIQ&event-id=f3791c2279a67f6e5cbc8e1beb41ded82eaff7f8ed6b35ac72ab0d87e84757f47664ec878e1834f701f5739517844b2db05a8fb2ff34955c9e9824527c15cd03&x-cli-msg=%7B%22appaccount_id%22%3A%2264396901%22%7D">
+                </a>
+                <form action="Signpage" class="disp" id="disp">
+                			<div id="circle">L</div>
+		                    <h3 id="loginname">Lavanya</h3>
+							<p id="loginmail">lavanyasrinivasan1811@gmail.com</p>
+							<button id="logOut">LOG OUT</button>
+						</form>  
+                </ul>
+                
+            </div>
+        </div>
+        <div id="level"></div>
+        <div id="pagename">MySql Playground</div>
+    
+    <div class="box">
+        <form id="work" action="create.html">
+            <legend>Mysql Playground</legend>
+            <div class="c-box1">
+                <h1>CREATE NEW</h1>
+                <h2>Write and Do</h2>
+                <button type="submit">START CREATE</button>
+            </div>
+        </form>
+        <form id="work" action="show.html">
+            <div class="c-box2">
+                <h1>SEE ANYTHING</h1>
+                <h2>Click and See</h2>
+                <button type="submit">START VIEW</button>
+            </div>
+        </form>
+    </div>
+    <form id="button" action="mainwork.html">
+        <button><img id="back-btn" src="https://freepngimg.com/thumb/web_design/24699-1-left-arrow-file.png"></button>
+    </form>
+</body>
+<script>
+
+function detailShow(){
+    const x = new XMLHttpRequest();
+    x.onreadystatechange = function(){
+        if (x.readyState == 4 && x.status == 200){
+        	  var jsonobj =JSON.parse(x.responseText);
+        	  document.getElementById("loginname").innerHTML=jsonobj["loginname"];
+        	  document.getElementById("loginmail").innerHTML=jsonobj["loginmail"];
+        	  document.getElementById("circle").innerHTML=jsonobj["loginsingle"];
+        	  document.getElementById("level").innerHTML=jsonobj["level"];
+            }
+
+        }
+    x.open("get","logdetail");
+    x.send();
+}
+detailShow();
+</script>
+
+</html>

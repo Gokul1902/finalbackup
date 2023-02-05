@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MAINWORK</title>
+    <link href="mainwork.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Noto+Serif:ital,wght@1,400;1,700&family=Oswald:wght@700&family=Rubik+Bubbles&family=Rubik+Marker+Hatch&family=Stylish&display=swap"
+        rel="stylesheet">
+
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Combo&family=Island+Moments&family=Lora&family=PT+Sans:ital@1&family=Roboto:ital,wght@1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body id="mainworkbody">
+    <div class="contain">
+            <div class="header-bar">
+                <h1 class="logo">DB</h1>
+                <ul class="slider-menu">
+                    <li id="abt">About</li>
+                   <a href="#" class="hidden">
+                  <img id="img" src="https://download-accl.zoho.com/webdownload?x-service=CLIQ&event-id=f3791c2279a67f6e5cbc8e1beb41ded82eaff7f8ed6b35ac72ab0d87e84757f47664ec878e1834f701f5739517844b2db05a8fb2ff34955c9e9824527c15cd03&x-cli-msg=%7B%22appaccount_id%22%3A%2264396901%22%7D">
+                </a>
+                <ul class="disp" id="disp">
+                      <div id="circle">L</div>
+                        <h3 id="loginname">Lavanya</h3>
+              <p id="loginmail">lavanyasrinivasan1811@gmail.com</p>
+              <button id="logOut">LOG OUT</button>
+            </ul>  
+                </ul>
+                
+            </div>
+        </div>
+         <div id="level"></div>
+        <div id="pagename">Multi Workspace</div>
+        <div class="box1">
+            <div id="mydata">
+
+
+                <form id="work" action="mysqlplay.html">
+                    <legend>Playground</legend>
+                    <div class=" title1">
+                        <h1>MYSQL</h1>
+                        <h2>Write and Do</h2>
+                        <button type="submit">START</button>
+                    </div>
+                </form>
+                <form id="work" action="psql.html">
+                    <div class="b-title1">
+                        <h1>POSTGRESQL</h1>
+                        <h2>Click and See</h2>
+                        <button type="submit">START</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="box2">
+            <div id="server">
+
+                <form id="worker" action="masterwork.html">
+                    <legend>Personalia:</legend>
+                    <div class="b-title1">
+                        <h1>MASTER</h1>
+                        <h2>Click & Change</h2>
+                        <div class="access">Access Denied</div>
+                    </div>
+
+
+                </form>
+
+                <form id="work" action="connector.html">
+                    <div class="b-title2">
+                        <h1>CLIENT</h1>
+                        <h2>click & connect</h2>
+
+                        <button type="submit">Go JOIN</button>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <div class="box3">
+        <div id="server">
+
+            <form id="work" action="mysql.html">
+                <legend>CONVERTOR</legend>
+                <div class="title3">
+                    <h1>CONTROL</h1>
+                    <h2>Click & Change </h2>
+                    <button type="submit">Change</button>
+                </div>
+
+            </form>
+
+            <form id="work" action="convertor.html">
+                <div class="b-title3">
+                    <h1>CLIENT</h1>
+                    <h2>click and connect</h2>
+                    <button type="submit">Go JOIN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    </div>
+    <a href="#" id="back-btn">REVIEW</a>
+</body>
+
+
+<script>
+    function control() {
+
+        const x = new XMLHttpRequest();
+        console.log(x.readyState);
+        x.onreadystatechange = function () {
+            if (x.readyState == 4) {
+                if (x.status == 200) {
+                	  var jsonobj =JSON.parse(x.responseText);
+                    document.getElementById("worker").innerHTML = "";
+                    document.getElementById("worker").innerHTML += "<h1>MASTER</h1>";
+                    document.getElementById("worker").innerHTML += "<h2>Click & Change</h2>";
+                    console.log(jsonobj["access"]);
+                    if (jsonobj["access"] == "True") {
+                        document.getElementById("worker").innerHTML += "<button type='submit'>CONTROL</button>";
+                    }
+                    else {
+                        document.getElementById("worker").innerHTML += "<button type='submit'>CONTROL</button>";
+
+                    	// document.getElementById("worker").innerHTML += "<button disabled type='submit'>ACCESS DENIED</button>";
+                    }
+
+
+                }
+
+            }
+        }
+
+        x.open("get", "Authentication");
+        x.send();
+    }
+
+    control();
+    
+    
+    function detailShow(){
+        const x = new XMLHttpRequest();
+        x.onreadystatechange = function(){
+            if (x.readyState == 4 && x.status == 200){
+            	  var jsonobj =JSON.parse(x.responseText);
+            	  document.getElementById("loginname").innerHTML=jsonobj["loginname"];
+            	  document.getElementById("loginmail").innerHTML=jsonobj["loginmail"];
+            	  document.getElementById("circle").innerHTML=jsonobj["loginsingle"];
+            	  document.getElementById("level").innerHTML=jsonobj["level"];
+                }
+
+            }
+        x.open("get","logdetail");
+        x.send();
+    }
+    detailShow();
+
+</script>
+
+</html>

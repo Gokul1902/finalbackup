@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CREATE</title>
+<link href="create.css" rel="stylesheet">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Noto+Serif:ital,wght@1,400;1,700&family=Oswald:wght@700&family=Rubik+Bubbles&family=Rubik+Marker+Hatch&family=Stylish&display=swap" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Combo&family=Island+Moments&family=Lora&family=PT+Sans:ital@1&family=Roboto:ital,wght@1,700&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+<body id="createbody">
+    <div class="contain">
+        <div class="header-bar">
+            <h1 class="logo">DB</h1>
+            <ul class="slider-menu">
+                <li id="abt">About</li>
+                 <a href="#" class="hidden">
+                <img id="img" src="https://download-accl.zoho.com/webdownload?x-service=CLIQ&event-id=f3791c2279a67f6e5cbc8e1beb41ded82eaff7f8ed6b35ac72ab0d87e84757f47664ec878e1834f701f5739517844b2db05a8fb2ff34955c9e9824527c15cd03&x-cli-msg=%7B%22appaccount_id%22%3A%2264396901%22%7D">
+            </a>
+            <form action="Signpage" class="disp" id="disp">
+                        <div id="circle">L</div>
+                        <h3 id="loginname">Lavanya</h3>
+                        <p id="loginmail">lavanyasrinivasan1811@gmail.com</p>
+                        <button id="logOut">LOG OUT</button>
+                    </form>  
+            </ul>
+            
+        </div>
+    </div>
+    <div id="level"></div>
+     <div id="pagename">MySql Writer</div>
+    <div id="parent">
+        <div id="write">
+            <form>
+            <input id="code" name="query" oninput="syntaxGenerator()" type="text" placeholder="Enter Query!!!" autocomplete="off"/>
+            <button id="tick" onclick="ansShow()"><span class="material-symbols-outlined">done_outline</span></button>
+        </form>
+            <div id="suggestion">
+                <div id="head">
+                    <h1 onclick="displayChange(this)">COMMANDS</h1>
+                    <h1 onclick="displayChange(this)">DATATYPES</h1>
+                    <h1 onclick="displayChange(this)">FUNCTIONS</h1>
+                    <button onclick="clearing()" value="CLEAR">CLEAR</button> 
+                    </div>
+            <div id="commands">
+                <h2>DML</h2>
+                <button onclick="add(this)" value="INSERT">INSERT</button>
+                <button onclick="add(this)" value="UPDATE">UPDATE</button>
+                <button onclick="add(this)" value="DELETE">DELETE</button>
+                <button onclick="add(this)" value="SELECT">SELECT</button>
+                <h2>DDL</h2>
+                <button onclick="add(this)" value="CREATE">CREATE</button>
+                <button onclick="add(this)" value="DROP">DROP</button>
+                <button onclick="add(this)" value="ALTER">ALTER</button>
+                <h2>TCL</h2>
+                <button onclick="add(this)" value="TRUNCATE">TRUNCATE</button>
+                <button onclick="add(this)" value="COMMENT">COMMENT</button>
+                <button onclick="add(this)" value="COMMIT">COMMIT</button>
+                <button onclick="add(this)" value="ROLLBACK">ROLLBACK</button>
+                <button onclick="add(this)" value="SAVEPOINT">SAVEPOINT</button>
+                <h2>DCL</h2>
+                <button onclick="add(this)" value="GRANT">GRANT</button>
+                <button onclick="add(this)" value="REVOKE">REVOKE</button>
+            
+            </div> 
+             <div id="datatypes">
+                <h2>String Data Types</h2>
+                <button onclick="add(this)" value="CCHAR(size)">CHAR(size)</button>
+                <button onclick="add(this)" value="VARCHAR(size)">VARCHAR(size)</button>
+                <button onclick="add(this)" value="BINARY(size)">BINARY(size)</button>
+                <button onclick="add(this)" value="VARBINARY(size)">VARBINARY(size)</button>
+                <button onclick="add(this)" value="TINYBLOB">TINYBLOB</button>
+                <button onclick="add(this)" value="TINYTEXT">TINYTEXT</button>
+                <button onclick="add(this)" value="TEXT(size)">TEXT(size)</button>
+                <button onclick="add(this)" value="BLOB(size)">BLOB(size)</button>
+                <button onclick="add(this)" value="MEDIUMTEXT">MEDIUMTEXT</button>
+                <button onclick="add(this)" value="MEDIUMBLOB">MEDIUMBLOB</button>
+                <button onclick="add(this)" value="LONGTEXT">LONGTEXT</button>
+                <button onclick="add(this)" value="LONGBLOB">LONGBLOB</button>
+                <button onclick="add(this)" value="ENUM(val1, val2, val3, ...)">ENUM(val1, val2, val3, ...)</button>
+                <button onclick="add(this)" value="SET(val1, val2, val3, ...)">SET(val1, val2, val3, ...)</button>   
+                <h2>Numeric Data Types</h2>
+                <button onclick="add(this)" value="BIT(size)">BIT(size)</button> 
+                <button onclick="add(this)" value="TINYINT(size)">TINYINT(size)</button>
+                <button onclick="add(this)" value="BOOL">BOOL</button>
+                <button onclick="add(this)" value="BOOLEAN">BOOLEAN</button>
+                <button onclick="add(this)" value="SMALLINT(size)">SMALLINT(size)</button>
+                <button onclick="add(this)" value="MEDIUMINT(size)">MEDIUMINT(size)</button>
+                <button onclick="add(this)" value="INT(size)">INT(size)</button>
+                <button onclick="add(this)" value="INTEGER(size)">INTEGER(size)</button>   
+                <button onclick="add(this)" value="BIGINT(size)">BIGINT(size)</button>
+                <button onclick="add(this)" value="FLOAT(size, d)">FLOAT(size, d)</button>
+                <button onclick="add(this)" value="FLOAT(p)">FLOAT(p)</button> 
+                <button onclick="add(this)" value="DOUBLE(size, d)">DOUBLE(size, d)</button>
+                <button onclick="add(this)" value="DECIMAL(size, d)">DECIMAL(size, d)</button>
+                <button onclick="add(this)" value="DEC(size, d)">DEC(size, d)</button>
+                <h2>Date and Time Data Types</h2>
+                <button onclick="add(this)" value="DATE">DATE</button>
+                <button onclick="add(this)" value="DATETIME(fsp)">DATETIME(fsp)</button>
+                <button onclick="add(this)" value="TIMESTAMP(fsp)">TIMESTAMP(fsp)</button>
+                <button onclick="add(this)" value="TIME(fsp)">TIME(fsp)</button>
+                <button onclick="add(this)" value="YEAR">YEAR</button>
+            </div> 
+            <div id="functions">
+                <h2>String Functions</h2>
+<button onclick="add(this)" value="ASCII( single_character )">ASCII( single_character )</button>
+<button onclick="add(this)" value="CHAR_LENGTH( string )">CHAR_LENGTH( string )</button>
+<button onclick="add(this)" value="CHARACTER_LENGTH( string )">CHARACTER_LENGTH( string )</button>
+<button onclick="add(this)" value="CONCAT( expression1, expression2, ... expression_n )">CONCAT( expression1, expression2, ... expression_n )</button>
+<button onclick="add(this)" value="CONCAT_WS( separator, expression1, expression2, ... expression_n )">CONCAT_WS( separator, expression1, expression2, ... expression_n )</button>
+<button onclick="add(this)" value="FIELD( value, val1, val2, val3, ... )">FIELD( value, val1, val2, val3, ... )</button>
+<button onclick="add(this)" value="FIND_IN_SET( string, string_list )">FIND_IN_SET( string, string_list )</button>
+<button onclick="add(this)" value="FORMAT( number, decimal_places )">FORMAT( number, decimal_places )</button>
+<button onclick="add(this)" value="INSERT( string, position, number, substring )">INSERT( string, position, number, substring )</button>
+<button onclick="add(this)" value="INSTR( string, substring )">INSTR( string, substring )</button>
+<button onclick="add(this)" value="LCASE( string )">LCASE( string )</button>
+<button onclick="add(this)" value="LEFT( string, number_of_characters )">LEFT( string, number_of_characters )</button>
+<button onclick="add(this)" value="LENGTH( string )">LENGTH( string )</button>
+<button onclick="add(this)" value="LOCATE( substring, string, [start_position ] )">LOCATE( substring, string, [start_position ] )</button>
+<button onclick="add(this)" value="LOWER( string )">LOWER( string )</button>
+<button onclick="add(this)" value="LPAD( string, length, pad_string )">LPAD( string, length, pad_string )</button>
+<button onclick="add(this)" value="LTRIM( string )">LTRIM( string )</button>
+<button onclick="add(this)" value="MID( string, start_position, length )">MID( string, start_position, length )</button>
+<button onclick="add(this)" value="POSITION( substring IN string )">POSITION( substring IN string )</button>
+<button onclick="add(this)" value="REPEAT( string, number )">REPEAT( string, number )</button>
+<button onclick="add(this)" value="REPLACE( string, from_substring, to_substring )">REPLACE( string, from_substring, to_substring )</button>
+<button onclick="add(this)" value="REVERSE( string )">REVERSE( string )</button>
+<button onclick="add(this)" value="RIGHT( string, number_of_characters )">RIGHT( string, number_of_characters )</button>
+<button onclick="add(this)" value="RPAD( string, length, pad_string )">RPAD( string, length, pad_string )</button>
+<button onclick="add(this)" value="RTRIM( string )">RTRIM( string )</button>
+<button onclick="add(this)" value="SPACE( number )">SPACE( number )</button>
+<button onclick="add(this)" value="STRCMP( string1, string2 )">STRCMP( string1, string2 )</button>
+<button onclick="add(this)" value="SUBSTR( string, start_position, [ length ] )">SUBSTR( string, start_position, [ length ] )</button>
+<button onclick="add(this)" value="SUBSTRING_INDEX( string, delimiter, number )">SUBSTRING_INDEX( string, delimiter, number )</button>
+<button onclick="add(this)" value="TRIM( [ LEADING | TRAILING | BOTH ] [ trim_character FROM ] string )">TRIM( [ LEADING | TRAILING | BOTH ] [ trim_character FROM ] string )</button>
+<button onclick="add(this)" value="UCASE( string )">UCASE( string )</button>
+<button onclick="add(this)" value="UPPER( string )">UPPER( string )</button>
+
+<h2>Numeric/Math Functions</h2>
+
+<button onclick="add(this)" value="ABS( number )">ABS( number )</button>
+<button onclick="add(this)" value="ACOS( number )">ACOS( number )</button>
+<button onclick="add(this)" value="ASIN( number )">ASIN( number )</button>
+<button onclick="add(this)" value="ATAN( number )">ATAN( number )</button>
+<button onclick="add(this)" value="ATAN2( n, m )">ATAN2( n, m )</button>
+<button onclick="add(this)" value="CEIL( number )">CEIL( number )</button>
+<button onclick="add(this)" value="COS( number )">COS( number )</button>
+<button onclick="add(this)" value="COT( number )">COT( number )</button>
+<button onclick="add(this)" value="COT( number )">COT( number )</button>
+<button onclick="add(this)" value="DEGREES( number )">DEGREES( number )</button>
+<button onclick="add(this)" value="n DIV m">n DIV m</button>
+<button onclick="add(this)" value="EXP( number )">EXP( number )</button>
+<button onclick="add(this)" value="FLOOR( number )">FLOOR( number )</button>
+<button onclick="add(this)" value="GREATEST( expr1, expr2, ... expr_n )">GREATEST( expr1, expr2, ... expr_n )</button>
+<button onclick="add(this)" value="LEAST( expr1, expr2, ... expr_n )">LEAST( expr1, expr2, ... expr_n )</button>
+<button onclick="add(this)" value="LN( number )">LN( number )</button>
+<button onclick="add(this)" value="LOG( number )">LOG( number )</button>
+<button onclick="add(this)" value="MAX(aggregate_expression)">MAX(aggregate_expression)</button>
+<button onclick="add(this)" value="MIN(aggregate_expression)">MIN(aggregate_expression)</button>
+<button onclick="add(this)" value="MOD( n, m )">MOD( n, m )</button>
+<button onclick="add(this)" value="PI( )">PI( )</button>
+<button onclick="add(this)" value="POW( m, n )">POW( m, n )</button>
+<button onclick="add(this)" value="POWER( m, n )">POWER( m, n )</button>
+<button onclick="add(this)" value="RADIANS( number )">RADIANS( number )</button>
+<button onclick="add(this)" value="RAND( [seed] )">RAND( [seed] )</button>
+<button onclick="add(this)" value="ROUND( number, [ decimal_places ] )">ROUND( number, [ decimal_places ] )</button>
+<button onclick="add(this)" value="SIGN( number )">SIGN( number )</button>
+<button onclick="add(this)" value="SIN( number )">SIN( number )</button>
+<button onclick="add(this)" value="SQRT( number )">SQRT( number )</button>
+<button onclick="add(this)" value="SUM(aggregate_expression)">SUM(aggregate_expression)</button>
+<button onclick="add(this)" value="TAN( number )">TAN( number )</button>
+<button onclick="add(this)" value="TRUNCATE( number, decimal_places )">TRUNCATE( number, decimal_places )</button>
+
+<h2>Date/Time Functions</h2>
+
+<button onclick="add(this)" value="ADDDATE( date, days )">ADDDATE( date, days )</button>
+<button onclick="add(this)" value="ADDTIME( start_value, time )">ADDTIME( start_value, time )</button>
+<button onclick="add(this)" value="CURDATE( )">CURDATE( )</button>
+<button onclick="add(this)" value="CURRENT_DATE( )">CURRENT_DATE( )</button>
+<button onclick="add(this)" value="CURRENT_TIME( )">CURRENT_TIME( )</button>
+<button onclick="add(this)" value="CURRENT_TIMESTAMP( )">CURRENT_TIMESTAMP( )</button>
+<button onclick="add(this)" value="CURTIME( )">CURTIME( )</button>
+<button onclick="add(this)" value="DATE( expression )">DATE( expression )</button>
+<button onclick="add(this)" value="DATE_ADD( date, INTERVAL value unit )">DATE_ADD( date, INTERVAL value unit )</button>
+<button onclick="add(this)" value="DATE_ADD( date, INTERVAL value unit )">DATE_ADD( date, INTERVAL value unit )</button>
+<button onclick="add(this)" value="DATE_FORMAT( date, format_mask )">DATE_FORMAT( date, format_mask )</button>
+<button onclick="add(this)" value="DATE_SUB( date, INTERVAL value unit )">DATE_SUB( date, INTERVAL value unit )</button>
+<button onclick="add(this)" value="DATEDIFF( date1, date2 )">DATEDIFF( date1, date2 )</button>
+<button onclick="add(this)" value="DAY( date_value )">DAY( date_value )</button>
+<button onclick="add(this)" value="DAYNAME( date_value )">DAYNAME( date_value )</button>
+<button onclick="add(this)" value="DAYOFMONTH( date_value )">DAYOFMONTH( date_value ) </button>
+<button onclick="add(this)" value="DAYOFWEEK( date_value )">DAYOFWEEK( date_value )</button>
+<button onclick="add(this)" value="DAYOFYEAR( date_value )">DAYOFYEAR( date_value )</button>
+<button onclick="add(this)" value="EXTRACT( unit FROM date )">EXTRACT( unit FROM date )</button>
+<button onclick="add(this)" value="FROM_DAYS( numeric_day )">FROM_DAYS( numeric_day )</button>
+<button onclick="add(this)" value="HOUR( date_value )">HOUR( date_value )</button>
+<button onclick="add(this)" value="LAST_DAY( date_value )">LAST_DAY( date_value )</button>
+<button onclick="add(this)" value="LOCALTIME( )">LOCALTIME( )</button>
+<button onclick="add(this)" value="LOCALTIMESTAMP( )">LOCALTIMESTAMP( )</button>
+<button onclick="add(this)" value="MAKEDATE( year, day-of-year )">MAKEDATE( year, day-of-year )</button>
+<button onclick="add(this)" value="MAKETIME( hour, minute, second )">MAKETIME( hour, minute, second )</button>
+<button onclick="add(this)" value="MICROSECOND( date_value )">MICROSECOND( date_value )</button>
+<button onclick="add(this)" value="MINUTE( date_value )">MINUTE( date_value )</button>
+<button onclick="add(this)" value="MONTH( date_value )">MONTH( date_value )</button>
+<button onclick="add(this)" value="MONTHNAME( date_value )">MONTHNAME( date_value )</button>
+<button onclick="add(this)" value="NOW( )">NOW( )</button>
+<button onclick="add(this)" value="PERIOD_ADD( period, number )PERIOD_ADD( period, number )">PERIOD_ADD( period, number )</button>
+<button onclick="add(this)" value="PERIOD_DIFF( period1, period2 )">PERIOD_DIFF( period1, period2 )</button>
+<button onclick="add(this)" value="QUARTER( date_value )">QUARTER( date_value )</button>
+<button onclick="add(this)" value="SEC_TO_TIME( seconds )">SEC_TO_TIME( seconds )</button>
+<button onclick="add(this)" value="SECOND( date_value )">SECOND( date_value )</button>
+<button onclick="add(this)" value="STR_TO_DATE( string, format_mask )">STR_TO_DATE( string, format_mask )</button>
+<button onclick="add(this)" value="SUBDATE( date, INTERVAL value unit )">SUBDATE( date, INTERVAL value unit )</button>
+<button onclick="add(this)" value="SUBTIME( start_value, time )">SUBTIME( start_value, time )</button>
+<button onclick="add(this)" value="SYSDATE( )">SYSDATE( )</button>
+<button onclick="add(this)" value="TIME( expression )">TIME( expression )</button>
+<button onclick="add(this)" value="TIME_FORMAT( time, format_mask )">TIME_FORMAT( time, format_mask )</button>
+<button onclick="add(this)" value="TIME_TO_SEC( time )">TIME_TO_SEC( time )</button>
+<button onclick="add(this)" value="TIMEDIFF( time1, time2 )">TIMEDIFF( time1, time2 )</button>
+<button onclick="add(this)" value="TIMESTAMP( expression, [ interval ] )">TIMESTAMP( expression, [ interval ] )</button>
+<button onclick="add(this)" value="TO_DAYS( date )">TO_DAYS( date )</button>
+<button onclick="add(this)" value="WEEK( date_value, [ mode ] )">WEEK( date_value, [ mode ] )</button>
+<button onclick="add(this)" value="WEEKDAY( date_value )">WEEKDAY( date_value )</button>
+<button onclick="add(this)" value="WEEKOFYEAR( date_value )">WEEKOFYEAR( date_value )</button>
+<button onclick="add(this)" value="YEAR( date_value )">YEAR( date_value )</button>
+<button onclick="add(this)" value="YEARWEEK( date_value, [ mode ] )">YEARWEEK( date_value, [ mode ] )</button>
+
+<h2>Advanced Functions</h2>
+
+<button onclick="add(this)" value="BIN( number )">BIN( number )</button>
+<button onclick="add(this)" value="BINARY value">BINARY value</button>
+<button onclick="add(this)" value="CAST( value AS type )">CAST( value AS type )</button>
+<button onclick="add(this)" value="COALESCE( expression1, expression2, ... expression_n )">COALESCE( expression1, expression2, ... expression_n )</button>
+<button onclick="add(this)" value="CONNECTION_ID( )">CONNECTION_ID( )</button>
+<button onclick="add(this)" value="CONV( number, from_base, to_base )">CONV( number, from_base, to_base )</button>
+<button onclick="add(this)" value="CONVERT( value, type )">CONVERT( value, type )</button>
+<button onclick="add(this)" value="CURRENT_USER( )">CURRENT_USER( )</button>
+<button onclick="add(this)" value="DATABASE( )">DATABASE( )</button>
+<button onclick="add(this)" value="IF( condition, [value_if_true], [value_if_false] )">IF( condition, [value_if_true], [value_if_false] )</button>
+<button onclick="add(this)" value="IFNULL( expression, value_if_null )">IFNULL( expression, value_if_null )</button>
+<button onclick="add(this)" value="ISNULL( expression )">ISNULL( expression )</button>
+<button onclick="add(this)" value="LAST_INSERT_ID( [expression] )">LAST_INSERT_ID( [expression] )</button>
+<button onclick="add(this)" value="NULLIF( expression1, expression2 )">NULLIF( expression1, expression2 )</button>
+<button onclick="add(this)" value="SESSION_USER( )">SESSION_USER( )</button>
+<button onclick="add(this)" value="SYSTEM_USER( )">SYSTEM_USER( )</button>
+<button onclick="add(this)" value="USER( )">USER( )</button>
+<button onclick="add(this)" value="VERSION( )">VERSION( )</button>
+
+<h2>Encryption Functions</h2>
+
+<button onclick="add(this)" value="ENCRYPT( string [, salt ] )">ENCRYPT( string [, salt ] )</button>
+<button onclick="add(this)" value="MD5( string )">MD5( string )</button>
+<button onclick="add(this)" value="OLD_PASSWORD( string )">OLD_PASSWORD( string )</button>
+<button onclick="add(this)" value="PASSWORD( string )">PASSWORD( string )</button>
+
+
+
+                </div>
+ 
+            </div>
+            
+        </div>
+        <div id="output">
+            <div id="result">
+
+            </div>
+        </div>
+    </div>  
+    <div id="syntax">
+        <ul id="syngen">
+        </ul>
+    </div>  
+    <form  action="mysqlplay.html">
+        <button><img id="back-btn" src="https://freepngimg.com/thumb/web_design/24699-1-left-arrow-file.png"></button>
+    </form>
+</body>
+<script>
+
+    function _(value){
+    return document.getElementById(value);
+}
+
+let inputvalue = _("code");
+
+function add(ele){
+   inputvalue.value=(inputvalue.value+ele.value).toLowerCase(); 
+   syntaxGenerator();
+   inputvalue.focus();   
+}
+function clearing(){
+    result.innerText="";
+    inputvalue.value="";
+}
+
+function displayChange(ele){
+    if(ele.innerText=="COMMANDS"){
+        _("commands").style.display="block";
+        _("datatypes").style.display="none";
+        _("functions").style.display="none";
+    }
+    else if(ele.innerText=="DATATYPES"){
+        _("commands").style.display="none";
+        _("datatypes").style.display="block";
+        _("functions").style.display="none";
+    }
+    else{
+        _("commands").style.display="none";
+        _("datatypes").style.display="none";
+        _("functions").style.display="block";
+    }
+}
+
+function ansShow(){
+	event.preventDefault();
+	var userquery=document.getElementById("code").value;
+    const x = new XMLHttpRequest();
+    x.onreadystatechange = function(){
+        if (x.readyState == 4){
+            if (x.status == 200){
+                var jsonobj =x.responseText;
+                console.log(jsonobj);
+                document.getElementById("code").value="";
+                document.getElementById("result").innerHTML=jsonobj;
+     }
+
+        }
+    }
+    
+
+    x.open("get","Create?query="+userquery);
+    x.send();
+}
+
+
+function syntaxGenerator(){
+    inputvalue.value=(inputvalue.value).toLowerCase();
+    if((inputvalue.value).includes("create")){
+        _("syntax").style.display="block";
+        _("syngen").innerHTML= "";
+        _("syngen").innerHTML+= `<h4>CREATE SYNTAX<h4>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">CREATE DATABASE databasename;</li>`;
+        _("syngen").innerHTML+=  `<li onclick="addQuery(this)">CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);</li>`;
+    }
+    else if((inputvalue.value).includes("update")){
+        _("syntax").style.display="block";
+        _("syngen").innerHTML= "";
+        _("syngen").innerHTML+= `<h4>UPDATE SYNTAX<h4>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;</li>`;
+    }
+    else if((inputvalue.value).includes("insert")){
+        _("syntax").style.display="block";
+        _("syngen").innerHTML= "";
+        _("syngen").innerHTML+= `<h4>INSERT SYNTAX<h4>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);</li>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">INSERT INTO table_name
+VALUES (value1, value2, value3, ...);</li>`;
+    }
+    else if((inputvalue.value).includes("delete")){
+        _("syntax").style.display="block";
+        _("syngen").innerHTML= "";
+        _("syngen").innerHTML+= `<h4>DELETE SYNTAX<h4>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">DELETE FROM table_name WHERE condition;</li>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">DELETE FROM table_name;</li>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">DELETE FROM Customers;</li>`;
+    }
+    else if((inputvalue.value).includes("select")){
+        _("syntax").style.display="block";
+        _("syngen").innerHTML= "";
+        _("syngen").innerHTML+= `<h4>SELECT SYNTAX<h4>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">SELECT column1, column2, ...
+FROM table_name;</li>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">SELECT * FROM table_name;</li>`;
+    }
+    else if((inputvalue.value).includes("drop")){
+        _("syntax").style.display="block";
+        _("syngen").innerHTML= "";
+        _("syngen").innerHTML+= `<h4>DROP SYNTAX<h4>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">DROP DATABASE databasename;</li>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">DROP TABLE table_name;</li>`;
+    }
+    else if((inputvalue.value).includes("use")){
+        _("syntax").style.display="block";
+        _("syngen").innerHTML= "";
+        _("syngen").innerHTML+= `<h4>USE SYNTAX<h4>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">use databasename;</li>`;
+    }
+    else if((inputvalue.value).includes("alter")){
+        _("syntax").style.display="block";
+        _("syngen").innerHTML= "";
+        _("syngen").innerHTML+= `<h4>ALTER SYNTAX<h4>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">ALTER TABLE table_name
+ADD column_name datatype;</li>`;
+            _("syngen").innerHTML+=  `<li onclick="addQuery(this)">ALTER TABLE table_name
+DROP COLUMN column_name;</li>`;
+_("syngen").innerHTML+=  `<li onclick="addQuery(this)">ALTER TABLE table_name
+RENAME COLUMN old_name to new_name;</li>`;
+_("syngen").innerHTML+=  `<li onclick="addQuery(this)">ALTER TABLE table_name
+MODIFY column_name datatype;</li>`;
+    }
+    else{
+        _("syntax").style.display="none";
+    }
+}
+
+function addQuery(ele) {
+    inputvalue.value=ele.innerText;
+}
+
+
+function detailShow(){
+    const x = new XMLHttpRequest();
+    x.onreadystatechange = function(){
+        if (x.readyState == 4 && x.status == 200){
+        	  var jsonobj =JSON.parse(x.responseText);
+        	  document.getElementById("loginname").innerHTML=jsonobj["loginname"];
+        	  document.getElementById("loginmail").innerHTML=jsonobj["loginmail"];
+        	  document.getElementById("circle").innerHTML=jsonobj["loginsingle"];
+        	  document.getElementById("level").innerHTML=jsonobj["level"];
+            }
+
+        }
+    x.open("get","logdetail");
+    x.send();
+}
+detailShow();
+</script>
+</html>
+
+
+
+
+
+
+
+

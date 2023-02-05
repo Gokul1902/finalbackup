@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>show</title>
+    <link href="show.css" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Noto+Serif:ital,wght@1,400;1,700&family=Oswald:wght@700&family=Rubik+Bubbles&family=Rubik+Marker+Hatch&family=Stylish&display=swap" rel="stylesheet">
+    
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Combo&family=Island+Moments&family=Lora&family=PT+Sans:ital@1&family=Roboto:ital,wght@1,700&display=swap"
+    rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body id="showbody">   
+
+    <div class="contain">
+            <div class="header-bar">
+                <h1 class="logo">DB</h1>
+                <ul class="slider-menu">
+                    <li id="abt">About</li>
+                   <a href="#" class="hidden">
+                  <img id="img" src="https://download-accl.zoho.com/webdownload?x-service=CLIQ&event-id=f3791c2279a67f6e5cbc8e1beb41ded82eaff7f8ed6b35ac72ab0d87e84757f47664ec878e1834f701f5739517844b2db05a8fb2ff34955c9e9824527c15cd03&x-cli-msg=%7B%22appaccount_id%22%3A%2264396901%22%7D">
+                </a>
+                <ul class="disp" id="disp">
+                      <div id="circle">L</div>
+                        <h3 id="loginname">Lavanya</h3>
+              <p id="loginmail">lavanyasrinivasan1811@gmail.com</p>
+              <button id="logOut">LOG OUT</button>
+            </ul>  
+                </ul>
+                
+            </div>
+        </div>
+         <div id="level"></div>
+        <div id="pagename">My Mysql Viewer</div>
+    <div id="parent">
+        <form id="databaseshow">
+            <h1>DATABASE</h1>
+            
+        </form>
+        <form id="tableshow">
+            <h1>TABLE</h1>
+           
+        </form>
+        <div id="resultshow">
+            
+        </div>
+    </div>
+    <form id="back-btn" action="mysqlplay.html">
+
+        <button><img id="back-btn" src="https://freepngimg.com/thumb/web_design/24699-1-left-arrow-file.png" ></button>
+        
+    </form>
+
+</body>
+<script>
+    let dbvalue="";
+    function table(ele){
+       event.preventDefault();
+       const x = new XMLHttpRequest();
+       console.log(x.readyState);
+       console.log(ele);
+       console.log(ele.target.value);
+       x.onreadystatechange = function(){
+        if (x.readyState == 4){
+            if (x.status == 200){
+                var jsonobj =JSON.parse(x.responseText);
+                var size = Object.keys(jsonobj).length;
+                console.log(jsonobj);
+                document.getElementById("resultshow").innerHTML="";
+                document.getElementById("tableshow").innerHTML="";
+                document.getElementById("tableshow").innerHTML="<h1>TABLE</h1>";
+                Object.keys(jsonobj).forEach(function(key) {
+                   let values = jsonobj[key];
+                   console.log(values);
+                   var but =document.createElement("button");
+                   but.setAttribute("value",values);
+                   but.innerText=values;
+                   but.setAttribute("onclick","tabledata(event)");
+                   let idCheck =document.getElementById("tableshow");
+                   idCheck.append(but);
+               });
+            }
+
+        }
+    }
+    dbvalue=ele.target.value;
+    console.log(dbvalue);
+    x.open("get","tableget?dbname="+dbvalue);
+    x.send();
+}
+
+
+
+
+
+
+function summa(){
+
+    const x = new XMLHttpRequest();
+    console.log(x.readyState);
+    console.log(this);
+    console.log(this.value);
+    x.onreadystatechange = function(){
+        if (x.readyState == 4){
+            if (x.status == 200){
+                var jsonobj =JSON.parse(x.responseText);
+                var size = Object.keys(jsonobj).length;
+                console.log(jsonobj);
+
+                document.getElementById("databaseshow").innerHTML="";
+                document.getElementById("databaseshow").innerHTML="<h1>DATABASE</h1>";
+                Object.keys(jsonobj).forEach(function(key) {
+                   let values = jsonobj[key];
+                   console.log(values);
+                   var but =document.createElement("button");
+                   but.setAttribute("value",values);
+                   but.setAttribute("onclick","table(event)");
+                   but.innerText=values;
+                   let idCheck =document.getElementById("databaseshow");
+                   idCheck.append(but);
+               });
+            }
+
+        }
+    }
+
+    x.open("get","DB");
+    x.send();
+}
+
+summa();
+function tabledata(ele){
+	event.preventDefault();
+    const x = new XMLHttpRequest();
+    console.log(x.readyState);
+    console.log(ele);
+    console.log(ele.target.value);
+    x.onreadystatechange = function(){
+        if (x.readyState == 4){
+            if (x.status == 200){
+            	var jsonobj =x.response;
+                var size = jsonobj.length;
+                
+                console.log(jsonobj)
+
+                document.getElementById("resultshow").innerHTML=jsonobj;
+            }
+
+        }
+    }
+    var dbtable=ele.target.value;
+    console.log(dbtable);
+    x.open("get","tabledata?tableName="+dbtable+"&database="+dbvalue);
+    x.send();
+}
+
+
+function detailShow(){
+    const x = new XMLHttpRequest();
+    x.onreadystatechange = function(){
+        if (x.readyState == 4 && x.status == 200){
+        	  var jsonobj =JSON.parse(x.responseText);
+        	  document.getElementById("loginname").innerHTML=jsonobj["loginname"];
+        	  document.getElementById("loginmail").innerHTML=jsonobj["loginmail"];
+        	  document.getElementById("circle").innerHTML=jsonobj["loginsingle"];
+        	  document.getElementById("level").innerHTML=jsonobj["level"];
+            }
+
+        }
+    x.open("get","logdetail");
+    x.send();
+}
+detailShow();
+</script>
+</html>
